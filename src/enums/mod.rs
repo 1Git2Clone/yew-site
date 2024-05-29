@@ -4,6 +4,7 @@ pub enum Socials {
     None,
 
     Twitter,
-    GitHub,
+    GitLab,
+    Codeberg,
     Discord,
 }
