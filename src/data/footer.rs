@@ -20,10 +20,17 @@ lazy_static! {
                 ),
             ),
             (
-                GitHub,
+                GitLab,
                 ImageElement::from(
-                    format!("{DIRECTORY}{}{EXTENSION}", "github"),
-                    String::from("https://github.com/1Kill2Steal"),
+                    format!("{DIRECTORY}{}{EXTENSION}", "gitlab"),
+                    String::from("https://gitlab.com/1Kill2Steal"),
+                ),
+            ),
+            (
+                Codeberg,
+                ImageElement::from(
+                    format!("{DIRECTORY}{}{EXTENSION}", "codeberg"),
+                    String::from("https://codeberg.org/1Kill2Steal"),
                 ),
             ),
             (
