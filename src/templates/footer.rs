@@ -9,7 +9,8 @@ pub fn footer() -> Html {
     let footer_img_container = || String::from("footer-img-container");
 
     let twitter = SOCIALS_IMAGES.get(&Twitter).unwrap().clone();
-    let github = SOCIALS_IMAGES.get(&GitHub).unwrap().clone();
+    let gitlab = SOCIALS_IMAGES.get(&GitLab).unwrap().clone();
+    let codeberg = SOCIALS_IMAGES.get(&Codeberg).unwrap().clone();
     let discord = SOCIALS_IMAGES.get(&Discord).unwrap().clone();
 
     let set_footer_img = |img_element: ImageElement, class: String, key: Option<String>| -> Html {
@@ -28,7 +29,7 @@ pub fn footer() -> Html {
         <footer>
             <h2>
                 { "By " }
-                <a href="https://github.com/1kill2steal" target="_blank">
+                <a href="https://gitlab.com/1kill2steal" target="_blank">
                     { "1Kill2Steal" }
                 </a>
             </h2>
@@ -39,9 +40,14 @@ pub fn footer() -> Html {
                         Some(twitter.img_src())
                 )}
                 {set_footer_img(
-                        github.clone(),
+                        gitlab.clone(),
                         footer_img_container(),
-                        Some(github.img_src())
+                        Some(gitlab.img_src())
+                )}
+                {set_footer_img(
+                        codeberg.clone(),
+                        footer_img_container(),
+                        Some(codeberg.img_src())
                 )}
                 {set_footer_img(
                         discord.clone(),
@@ -55,8 +61,8 @@ pub fn footer() -> Html {
                 {"Netflify"}
                 </a>
                 {" & Code is free to use (MIT license) on "}
-                <a href="https://www.github.com/" target="_blank">
-                {"GitHub"}
+                <a href="https://www.gitlab.com/1k2s/yew-site" target="_blank">
+                {"GitLab"}
                 </a>
             </p>
         </footer>
