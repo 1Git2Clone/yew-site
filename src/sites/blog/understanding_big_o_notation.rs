@@ -290,11 +290,8 @@ pub fn understanding_big_o_notation() -> Html {
 
                     <br />
                     <br />
-
-                    {set_iframe_gist(
-                        "https://gist.github.com/1Kill2Steal/ccfd097bc8fa49f0aba87e5035ab75a2",
-                        None
-                    )}
+                    {set_iframe_godbolt(r#"<iframe width="800px" height="200px" src="https://godbolt.org/e?readOnly=true&hideEditorToolbars=true#g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:python,selection:(endColumn:35,endLineNumber:4,positionColumn:35,positionLineNumber:4,selectionStartColumn:35,selectionStartLineNumber:4,startColumn:35,startLineNumber:4),source:'def+fib(n):%0A++++if+n+%3C+2:%0A++++++++return+1%0A++++return+fib(n+-+1)+%2B+fib(n+-+2)'),l:'5',n:'1',o:'Python+source+%231',t:'0')),k:100,l:'4',n:'0',o:'',s:0,t:'0')),version:4"></iframe>"#, None, None)}
+                    <br />
                     {"Chances are that you've seen this notorious Fibonacci sequence solution. This
                     is a bad solution in practice though. If you refer to the image at the start of
                     this section. It's in the second slowest section. The solutions here (and at
