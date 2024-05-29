@@ -10,7 +10,7 @@ pub fn details() -> Html {
 
             <p>
                 {"I'm mainly a back-end developer but with "}
-                <a href="https://github.com/1Kill2Steal/yew-site" target="_blank">
+                <a href="https://gitlab.com/1k2s/yew-site" target="_blank">
                     {"this project"}
                 </a>
                 {" I decided to challenge myself and try out something new."}
@@ -46,58 +46,63 @@ pub fn details() -> Html {
             <h2>{"Other projects"}</h2>
             <ul class={"other-projects"}>
                 <li>
-                    <a href="https://github.com/1Kill2Steal/serenity-discord-bot"
+                    <a href="https://gitlab.com/1k2s/serenity-discord-bot"
                         target="_blank"
                     >
                         {"Discord bot"}
                     </a>
                     {" "}
-                    <img src="https://raw.githubusercontent.com/1Kill2Steal/skill-icons/main/icons/Rust.svg" />
+                    <img src="/public/skill-icons/Rust.svg" />
                 </li>
                 <li>
-                    <a href="https://github.com/1Kill2Steal/discord-interactions-bot"
+                    <a href="https://gitlab.com/1k2s/discord-interactions-bot"
                         target="_blank"
                     >
                         {"Discord bot"}
                     </a>
                     {" "}
-                    <img src="https://raw.githubusercontent.com/1Kill2Steal/skill-icons/main/icons/TypeScript.svg" />
+                    <img src="/public/skill-icons/TypeScript.svg" />
                 </li>
                 <li>
-                    <a href="https://github.com/1Kill2Steal/leetcode-trees-rs"
+                    <a href="https://gitlab.com/1k2s/leetcode-trees-rs"
                         target="_blank"
                     >
                         {"LeetCode mini library"}
                     </a>
                     {" "}
-                    <img src="https://raw.githubusercontent.com/1Kill2Steal/skill-icons/main/icons/Rust.svg" />
+                    <img src="/public/skill-icons/Rust.svg" />
                 </li>
                 <li>
-                    <a href="https://github.com/1Kill2Steal/hunger-games-website"
+                    <a href="https://gitlab.com/1k2s/hunger-games-website"
                         target="_blank"
                     >
                         {"Hunger Games Website"}
                     </a>
                     {" "}
-                    <img src="https://raw.githubusercontent.com/1Kill2Steal/skill-icons/main/icons/HTML.svg" />
+                    <img src="/public/skill-icons/HTML.svg" />
                     {" "}
-                    <img src="https://raw.githubusercontent.com/1Kill2Steal/skill-icons/main/icons/CSS.svg" />
+                    <img src="/public/skill-icons/CSS.svg" />
                     {" "}
-                    <img src="https://raw.githubusercontent.com/1Kill2Steal/skill-icons/main/icons/TypeScript.svg" />
+                    <img src="/public/skill-icons/TypeScript.svg" />
                     <br />
                     <br />
                     {"- hosted on "}
-                    <a href="https://1kill2steal.github.io/hunger-games-website/"
+                    <a href="https://1k2s.gitlab.io/hunger-games-website/"
                         target="_blank"
                     >
-                        {"GitHub Pages"}
+                        {"GitLab Pages"}
                     </a>
                 </li>
                 <li>
                     {"More on my "}
-                    <a href="https://github.com/1Kill2Steal" target="_blank">
-                        {"GitHub profile"}
+                    <a href="https://gitlab.com/1Kill2Steal" target="_blank">
+                        {"GitLab"}
                     </a>
+                    {" and "}
+                    <a href="https://codeberg.org/1Kill2Steal" target="_blank">
+                        {"Codeberg"}
+                    </a>
+                    {" profiles."}
                 </li>
             </ul>
         </>
