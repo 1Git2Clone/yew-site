@@ -15,6 +15,9 @@ pub fn html_wrapper(item: Html, key: String, class: Option<String>, id: Option<S
     }
 }
 
+// NOTE: Unused
+// (My GitHub account got flagged so I'm tired of relying on anything related to Microsoft.)
+#[allow(unused)]
 pub fn set_iframe_gist(link: &str, height: Option<u32>) -> Html {
     let auto_for_none = || match height {
         Some(_) => None,
@@ -38,6 +41,28 @@ pub fn set_iframe_gist(link: &str, height: Option<u32>) -> Html {
                         </script>
                     </body>
                 </html>", auto_for_none().unwrap_or(height.unwrap_or(0).to_string()), link.to_owned() + ".js")}
+        ></iframe>
+    }
+}
+
+pub fn set_iframe_godbolt(link: &'static str, width: Option<u32>, height: Option<u32>) -> Html {
+    let width_default = || match width {
+        Some(_) => None,
+        None => Some(String::from("")),
+    };
+    let height_default = || match height {
+        Some(_) => None,
+        None => Some(String::from("")),
+    };
+    // Remove the iframe shenanigans. (It looks funky I know)
+    let link = link
+        .replace("<iframe width=\"800px\" height=\"200px\" src=\"", "")
+        .replace("\"></iframe>", "");
+    html! {
+        <iframe class={data::GODBOLT_IFRAME}
+                src={link}
+                width={width_default().unwrap_or(width.unwrap_or(0).to_string())}
+                height={height_default().unwrap_or(width.unwrap_or(0).to_string())}
         ></iframe>
     }
 }
