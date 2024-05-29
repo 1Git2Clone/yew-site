@@ -1,5 +1,3 @@
-use crate::utils::set_iframe_gist;
-
 use super::*;
 
 const PROJECT_SHOWCASE: &str = "project-showcase";
@@ -14,58 +12,58 @@ fn project_showcase_wrap(item: Html) -> Html {
 pub fn serenity_discord_bot_contents() -> Html {
     let assets_folder = || String::from("/public/projects/serenity-discord-bot/");
     project_showcase_wrap(html! {
-        <>
-            <br />
-            <h2>{"Serenity Discord Bot"}</h2>
-            <br />
-            <a href="https://github.com/1Kill2Steal/serenity-discord-bot" target="_blank">
-                {"GitHub repo"}
-            </a>
-            <br />
-            <br />
-            {" It uses the "}
-            <a href="https://github.com/serenity-rs/poise" target="_blank">
-                {"poise"}
-            </a>
-            {" and "}
-            <a href="https://github.com/serenity-rs/serenity" target="_blank">
-                {"serenity"}
-            </a>
-            {" frameworks in order to provide the necessary functionality for the bot."}
-            <br />
-            <br />
-            {"Additional features:"}
-            <br />
-            <ul>
-                <li>
-                {"DataBase connections (w/ SQLite)."}
-                </li>
-                <li>
-                {"Docker & DockerCompose integration."}
-                </li>
-                <li>
-                {"Continuous Integration via GitHub Actions."}
-                </li>
-            </ul>
-            <br />
-            <h4>{"Project showcase content"}</h4>
-            <div class="project-videos">
-                <video controls=true>
-                    <source src={assets_folder() + "showcase-1.mp4"} type="video/mp4" />
-                </video>
-                <video controls=true>
-                    <source src={assets_folder() + "showcase-2.mp4"} type="video/mp4" />
-                </video>
-                <video controls=true>
-                    <source src={assets_folder() + "showcase-3.mp4"} type="video/mp4" />
-                </video>
-                <video controls=true>
-                    <source src={assets_folder() + "showcase-4.mp4"} type="video/mp4" />
-                </video>
-            </div>
-            <br />
-        </>
-    })
+            <>
+    <br />
+                <h2>{"Serenity Discord Bot"}</h2>
+                <br />
+                <a href="https://gitlab.com/1k2s/serenity-discord-bot" target="_blank">
+                    {"GitLab repo"}
+                </a>
+                <br />
+                <br />
+                {" It uses the "}
+                <a href="https://github.com/serenity-rs/poise" target="_blank">
+                    {"poise"}
+                </a>
+                {" and "}
+                <a href="https://github.com/serenity-rs/serenity" target="_blank">
+                    {"serenity"}
+                </a>
+                {" frameworks in order to provide the necessary functionality for the bot."}
+                <br />
+                <br />
+                {"Additional features:"}
+                <br />
+                <ul>
+                    <li>
+                    {"DataBase connections (w/ SQLite)."}
+                    </li>
+                    <li>
+                    {"Docker & DockerCompose integration."}
+                    </li>
+                    <li>
+                    {"Continuous Integration via GitHub Actions & GitLab pipelines."}
+                    </li>
+                </ul>
+                <br />
+                <h4>{"Project showcase content"}</h4>
+                <div class="project-videos">
+                    <video controls=true>
+                        <source src={assets_folder() + "showcase-1.mp4"} type="video/mp4" />
+                    </video>
+                    <video controls=true>
+                        <source src={assets_folder() + "showcase-2.mp4"} type="video/mp4" />
+                    </video>
+                    <video controls=true>
+                        <source src={assets_folder() + "showcase-3.mp4"} type="video/mp4" />
+                    </video>
+                    <video controls=true>
+                        <source src={assets_folder() + "showcase-4.mp4"} type="video/mp4" />
+                    </video>
+                </div>
+                <br />
+            </>
+        })
 }
 
 pub fn discord_interactions_bot_contents() -> Html {
@@ -77,8 +75,8 @@ pub fn discord_interactions_bot_contents() -> Html {
             <h2>{"Discord Interactions Bot"}</h2>
 
             <br />
-            <a href="https://github.com/1Kill2Steal/serenity-discord-bot" target="_blank">
-                {"GitHub repo"}
+            <a href="https://gitlab.com/1Kill2Steal/discord-interactions-bot" target="_blank">
+                {"GitLab repo"}
             </a>
             <br />
             <br />
@@ -142,8 +140,8 @@ pub fn counting_blinks_contents() -> Html {
             <br />
             <h2>{"Counting Blinks"}</h2>
             <br />
-            <a href="https://github.com/1Kill2Steal/counting-blinks" target="_blank">
-                {"GitHub repo"}
+            <a href="https://gitlab.com/1k2s/counting-blinks" target="_blank">
+                {"GitLab repo"}
             </a>
             <br />
             <br />
@@ -181,8 +179,8 @@ pub fn leetcode_trees_contents() -> Html {
             <br />
             <h2>{"LeetCode Trees"}</h2>
             <br />
-            <a href="https://github.com/1Kill2Steal/leetcode-trees-rs" target="_blank">
-                {"GitHub repo"}
+            <a href="https://gitlab.com/1k2s/leetcode-trees-rs" target="_blank">
+                {"GitLab repo"}
             </a>
             <br />
             <br />
@@ -209,15 +207,15 @@ pub fn leetcode_trees_contents() -> Html {
             <br />
             <br />
             {"Feel free to check out the "}
-            <a href="https://github.com/1Kill2Steal/leetcode-trees-rs/tree/main/solutions" target="_blank">
+            <a href="https://gitlab.com/1k2s/leetcode-trees-rs/tree/main/solutions" target="_blank">
                 {"Example Solutions"}
             </a>
-            {" on GitHub."}
+            {" on GitLab."}
             <br />
             <br />
             {"Also feel free to check out the following example which is also available on the
-            homepage of the GitHub repo: "}
-            {set_iframe_gist("https://gist.github.com/1Kill2Steal/0ffdcc6e9defbcd0f1ca37b0cbe73a40", Some(1000))}
+            README.md file of the "}
+            <a href="https://gitlab.com/1k2s/leetcode-trees-rs/">{"GitLab repo"}</a>
         </>
     })
 }
