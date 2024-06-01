@@ -20,6 +20,13 @@ lazy_static! {
                 ),
             ),
             (
+                GitHub,
+                ImageElement::from(
+                    format!("{DIRECTORY}{}{EXTENSION}", "github"),
+                    String::from("https://github.com/1Git2Clone"),
+                ),
+            ),
+            (
                 GitLab,
                 ImageElement::from(
                     format!("{DIRECTORY}{}{EXTENSION}", "gitlab"),
