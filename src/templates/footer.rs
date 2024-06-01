@@ -13,12 +13,17 @@ pub fn footer() -> Html {
     let codeberg = get_socials_images(s::Codeberg);
     let discord = get_socials_images(s::Discord);
 
-    let set_footer_img = |key: Option<&str>, img_element: &ImageElement| -> Html {
+    let set_footer_img = |key: Option<&str>,
+                          img_element: &ImageElement,
+                          alt: &'static str|
+     -> Html {
         html! {
             <div key={key.unwrap_or(&img_element.img_src.clone())} class={"footer-img-container"}>
                 <a href={img_element.href.clone()} target="_blank">
-                    <img class="footer-img"
+                    <img
+                        class="footer-img"
                         src={img_element.img_src.clone()}
+                        alt={alt}
                     />
                 </a>
             </div>
@@ -37,22 +42,27 @@ pub fn footer() -> Html {
                 {set_footer_img(
                         Some(&twitter.img_src.clone()),
                         &twitter,
+                        "twitter",
                 )}
                 {set_footer_img(
                         Some(&github.img_src.clone()),
                         &github,
+                        "github",
                 )}
                 {set_footer_img(
                         Some(&gitlab.img_src.clone()),
                         &gitlab,
+                        "gitlab",
                 )}
                 {set_footer_img(
                         Some(&codeberg.img_src.clone()),
                         &codeberg,
+                        "codeberg",
                 )}
                 {set_footer_img(
                         Some(&discord.img_src.clone()),
                         &discord,
+                        "discord",
                 )}
             </div>
             <p>
