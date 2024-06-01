@@ -62,6 +62,11 @@ a {
   color: var(--light-red);
   -webkit-text-stroke: 0.5px var(--light-red);
   text-shadow: 0 0 2px var(--red);
+  transition: color var(--quick-speed) var(--bezier-primary);
+}
+
+a:hover {
+  color: var(--dark-red);
 }
 
 h1,
