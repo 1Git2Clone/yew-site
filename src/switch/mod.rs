@@ -44,6 +44,9 @@ pub fn switch(routes: Route) -> Html {
             <ProjectLeetCodeTrees />
         },
 
+        Route::GalleryBase => html! {
+            <Gallery page={1} />
+        },
         Route::Gallery { page } => html! {
             <Gallery page={page} />
         },
