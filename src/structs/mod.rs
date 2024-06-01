@@ -29,3 +29,8 @@ impl ImageElement {
         self.href
     }
 }
+
+#[derive(yew::Properties, PartialEq)]
+pub struct GalleryProps {
+    pub page: u32,
+}

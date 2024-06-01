@@ -44,8 +44,8 @@ pub fn switch(routes: Route) -> Html {
             <ProjectLeetCodeTrees />
         },
 
-        Route::Gallery => html! {
-            <Gallery />
+        Route::Gallery { page } => html! {
+            <Gallery page={page} />
         },
 
         Route::NotFound => html! { <a align="center">{ "404 - Webpage Not Found" }</a> },

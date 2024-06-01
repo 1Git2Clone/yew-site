@@ -6,9 +6,10 @@ use gloo_net::http::Request;
 
 // You can change some file path and image name pattern stuff here.
 use crate::data::gallery::*;
+use crate::structs::GalleryProps;
 
 #[function_component(Gallery)]
-pub fn gallery() -> Html {
+pub fn gallery(&GalleryProps { page }: &GalleryProps) -> Html {
     // Who would've thought I'd use someone else's GitHub repo code for reference...
     // I'm sorry and thank you at the same time
     // https://github.com/LelouchFR/windows-terminal-theme-generator/blob/61262073be3af7c39468c18b9cf8835683e00495/src/home_page.rs#L50-L63
@@ -76,8 +77,8 @@ pub fn gallery() -> Html {
     };
 
     // Hooks
-    let current_page = use_state(|| 1);
-    let move_state = |distance: i32| {
+    let current_page = use_state(|| page as i32);
+    let move_state = |distance: i32| -> (Callback<MouseEvent>, i32) {
         let counter = current_page.clone();
         let target = *counter + distance;
 
@@ -88,20 +89,24 @@ pub fn gallery() -> Html {
             target < 0,
         );
 
+        let res: i32;
         if first_page_jump {
-            return Callback::from(move |_| counter.set(1));
+            return (Callback::from(move |_| counter.set(1)), 1);
         }
         if last_page_jump {
-            return Callback::from(move |_| counter.set(total_pages));
+            res = total_pages;
+            return (Callback::from(move |_| counter.set(res)), res);
         }
         if overflow {
-            return Callback::from(move |_| counter.set(target - total_pages));
+            res = target - total_pages;
+            return (Callback::from(move |_| counter.set(res)), res);
         }
         if underflow {
-            return Callback::from(move |_| counter.set(total_pages - target.abs()));
+            res = total_pages - target.abs();
+            return (Callback::from(move |_| counter.set(res)), res);
         }
 
-        Callback::from(move |_| counter.set(target))
+        (Callback::from(move |_| counter.set(target)), target)
     };
 
     let selected_img_id = use_state(|| 0);
@@ -140,18 +145,51 @@ pub fn gallery() -> Html {
             )
         }
     };
+
     let pagination = || {
         html! {
         <div class="pagination">
             <span>{ format!("Page {} of {}", *current_page, total_pages) }</span>
-            <button onclick={move_state(0)}>{ "Start" }</button>
-            <button onclick={move_state(-3)}>{ "-3" }</button>
-            <button onclick={move_state(-2)}>{ "-2" }</button>
-            <button onclick={move_state(-1)}>{ "-1" }</button>
-            <button onclick={move_state(1)}>{ "+1" }</button>
-            <button onclick={move_state(2)}>{ "+2" }</button>
-            <button onclick={move_state(3)}>{ "+3" }</button>
-            <button onclick={move_state(total_pages)}>{ "End" }</button>
+            <Link<Route> to={Route::Gallery { page: move_state(0).1 as u32 } }>
+                <button onclick={move_state(0).0}>
+                        { "Start" }
+                </button>
+            </Link<Route>>
+            <Link<Route> to={Route::Gallery { page: move_state(-3).1 as u32 } }>
+                <button onclick={move_state(-3).0}>
+                    { "-3" }
+                </button>
+            </Link<Route>>
+            <Link<Route> to={Route::Gallery { page: move_state(-2).1 as u32 } }>
+                <button onclick={move_state(-2).0}>
+                    { "-2" }
+                </button>
+            </Link<Route>>
+            <Link<Route> to={Route::Gallery { page: move_state(-1).1 as u32 } }>
+                <button onclick={move_state(-1).0}>
+                    { "-1" }
+                </button>
+            </Link<Route>>
+            <Link<Route> to={Route::Gallery { page: move_state(1).1 as u32 } }>
+                <button onclick={move_state(1).0}>
+                    { "+1" }
+                </button>
+            </Link<Route>>
+            <Link<Route> to={Route::Gallery { page: move_state(2).1 as u32 } }>
+                <button onclick={move_state(2).0}>
+                    { "+2" }
+                </button>
+            </Link<Route>>
+            <Link<Route> to={Route::Gallery { page: move_state(3).1 as u32 } }>
+                <button onclick={move_state(3).0}>
+                    { "+3" }
+                </button>
+            </Link<Route>>
+            <Link<Route> to={Route::Gallery { page: move_state(total_pages).1 as u32 } }>
+                <button onclick={move_state(total_pages).0}>
+                    { "End" }
+                </button>
+            </Link<Route>>
         </div>
         }
     };
