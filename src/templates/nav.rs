@@ -94,7 +94,7 @@ pub fn nav() -> Html {
                     </div>
                 </details>
                 <div key={"gallery"} class={&set_nav_item_class}>
-                    <Link<Route> to={Route::Gallery}>
+                    <Link<Route> to={Route::Gallery { page: 1 } }>
                         { "Gallery" }
                     </Link<Route>>
                 </div>
