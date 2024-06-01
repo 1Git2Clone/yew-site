@@ -14,7 +14,7 @@ pub fn homepage() -> Html {
                 <br />
 
                 {"No one cares about that though... Make sure to check out the best part of this site! ("}
-                <Link<Route> to={Route::Gallery { page: 1 } }>
+                <Link<Route> to={Route::GalleryBase}>
                     {"the Hu Tao gallery"}
                 </Link<Route>>
                 {")"}
