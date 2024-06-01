@@ -67,13 +67,15 @@ nav {
 .mobile-nav-section summary,
 .section-nav-items a,
 .mobile-section-nav-items a {
-  color: var(--red);
+  color: var(--light-red);
+  -webkit-text-stroke: 0.5px var(--light-red);
+  text-shadow: 0 0 2px var(--red);
   transition: var(--quick-speed) var(--bezier-primary);
 }
 .nav-section summary:hover,
 .mobile-nav-section summary:hover,
 .section-nav-items a:hover {
-  color: var(--dark-red);
+  color: var(--red);
 }
 .mobile-section-nav-items a:hover {
   color: var(--red);
