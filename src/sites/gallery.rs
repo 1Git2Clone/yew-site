@@ -223,17 +223,23 @@ pub fn gallery() -> Html {
                         {
                             if current_artist.is_empty() {
                                 html! {
-                                    <a href={"javascript:void(0)"}
-                                    class={image_artist_box.clone()}
+                                    <a
+                                        class={image_artist_box.clone()}
                                     >
                                         {"Unknown artist"}
                                     </a>
                                 }
                             } else {
                                 html! {
-                                    <a href={current_artist.chars().take_while(|c| *c != ' ').collect::<String>()}
-                                       target="_blank"
-                                       class={image_artist_box}
+                                    <a
+                                        href={
+                                            current_artist
+                                                .chars()
+                                                .take_while(|c| *c != ' ')
+                                                .collect::<String>()
+                                        }
+                                        target="_blank"
+                                        class={image_artist_box}
                                     >
                                         {&current_artist.split_whitespace().skip(1).collect::<String>()}
                                     </a>

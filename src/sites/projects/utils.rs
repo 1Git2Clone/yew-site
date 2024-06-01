@@ -4,17 +4,13 @@ use super::*;
 /// contents module of this directory.
 /// In this way it's possible to put all the Function Components in this module folder and
 /// re-export them to make the project more structured.
-pub fn wrap_project_subsite(nav: Navigator, content_html: Html) -> Html {
-    let callback_nav = |target: Route| {
-        let nav = nav.clone();
-        Callback::from(move |_| nav.clone().push(&target))
-    };
+pub fn wrap_project_subsite(content_html: Html) -> Html {
     wrap_site(html! {
         <>
             <br />
-            <a href={"javascript:void(0);"} onclick={callback_nav(Route::Projects)}>
-                {"Go back"}
-            </a>
+            <Link<Route> to={Route::Projects}>
+                { "Go back" }
+            </Link<Route>>
             {content_html}
         </>
     })

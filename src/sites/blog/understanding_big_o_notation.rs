@@ -2,7 +2,6 @@ use super::*;
 
 #[function_component(BlogUnderstandingBigONotation)]
 pub fn understanding_big_o_notation() -> Html {
-    let nav = use_navigator().unwrap();
     let clipboard = yew_hooks::use_clipboard();
 
     // Contents names
@@ -692,7 +691,6 @@ pub fn understanding_big_o_notation() -> Html {
 
     // Contents final HTML layout
     wrap_blog_subsite(
-        nav,
         clipboard,
         BlogData::from(
             "24/04/2024",

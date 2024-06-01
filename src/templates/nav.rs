@@ -47,69 +47,56 @@ pub fn nav() -> Html {
         }
     };
 
-    let nav = use_navigator().unwrap();
-
-    let callback_nav = |target: Route| {
-        let nav = nav.clone();
-        Callback::from(move |_| nav.clone().push(&target))
-    };
-
     html! {
         <nav class={&set_nav}>
             <div key={"mobile_nav"} class={&set_nav_button} onclick={flip()}>
-                <a href={"javascript:void(0);"}>{ "☰" }</a>
+                <a>{ "☰" }</a>
             </div>
             <div key={"nav_container"} class={&set_nav_container}>
-                <div key={"homepage"} class={&set_nav_item_class} onclick={callback_nav(Route::Homepage)}>
-                    <a href={"javascript:void(0);"}>{ "Homepage" }</a>
+                <div key={"homepage"} class={&set_nav_item_class}>
+                    <Link<Route> to={Route::Homepage}>{ "Homepage" }</Link<Route>>
                 </div>
-                <div key={"about_me"} class={&set_nav_item_class} onclick={callback_nav(Route::AboutMe)}>
-                    <a href={"javascript:void(0);"}>{ "About Me" }</a>
+                <div key={"about_me"} class={&set_nav_item_class}>
+                    <Link<Route> to={Route::AboutMe}>{ "About Me" }</Link<Route>>
                 </div>
                 <details key={"blog_details"} class={&set_nav_section_class}>
                     <summary>{"Blog"}</summary>
                     <div key={"blog_navigation"} class={&set_nav_section_items}>
-                        <a href={"javascript:void(0);"} onclick={callback_nav(Route::Blog)}>{ "All Blogs" }</a>
+                        <Link<Route> to={Route::Blog}>{ "All Blogs" }</Link<Route>>
                         <br />
-                        <a href={"javascript:void(0);"} onclick={callback_nav(Route::BlogUnderstandingBigONotation)}>{ "Understanding Big O Notation" }</a>
+                        <Link<Route> to={Route::BlogUnderstandingBigONotation}>
+                            { "Understanding Big O Notation" }
+                        </Link<Route>>
                     </div>
                 </details>
                 <details key={"projects_details"} class={&set_nav_section_class}>
                     <summary>{"Projects"}</summary>
                     <div key={"projects_navigation"} class={&set_nav_section_items}>
-                        <a href={"javascript:void(0);"}
-                           onclick={callback_nav(Route::Projects)}
-                        >
-                           {"All Projects"}
-                        </a>
+                        <Link<Route> to={Route::Projects}>
+                            { "All Projects" }
+                        </Link<Route>>
                         <br />
-                        <a href={"javascript:void(0);"}
-                           onclick={callback_nav(Route::ProjectSerenityDiscordBot)}
-                        >
-                           {"Serenity Discord Bot"}
-                        </a>
+                        <Link<Route> to={Route::ProjectSerenityDiscordBot}>
+                            { "Serenity Discord Bot" }
+                        </Link<Route>>
                         <br />
-                        <a href={"javascript:void(0);"}
-                           onclick={callback_nav(Route::ProjectDiscordInteractionsBot)}
-                        >
-                           {"Discord Interactions Bot"}
-                        </a>
+                        <Link<Route> to={Route::ProjectDiscordInteractionsBot}>
+                            { "Discord Interactions Bot" }
+                        </Link<Route>>
                         <br />
-                        <a href={"javascript:void(0);"}
-                           onclick={callback_nav(Route::ProjectCountingBlinks)}
-                        >
-                           {"Counting Blinks"}
-                        </a>
+                        <Link<Route> to={Route::ProjectCountingBlinks}>
+                            { "Counting Blinks" }
+                        </Link<Route>>
                         <br />
-                        <a href={"javascript:void(0);"}
-                           onclick={callback_nav(Route::ProjectLeetCodeTrees)}
-                        >
-                           {"LeetCode Trees"}
-                        </a>
+                        <Link<Route> to={Route::ProjectLeetCodeTrees}>
+                            { "LeetCode Trees" }
+                        </Link<Route>>
                     </div>
                 </details>
-                <div key={"gallery"} class={&set_nav_item_class} onclick={callback_nav(Route::Gallery)}>
-                    <a href={"javascript:void(0);"}>{ "Gallery" }</a>
+                <div key={"gallery"} class={&set_nav_item_class}>
+                    <Link<Route> to={Route::Gallery}>
+                        { "Gallery" }
+                    </Link<Route>>
                 </div>
             </div>
         </nav>

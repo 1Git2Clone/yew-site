@@ -2,19 +2,13 @@ use super::*;
 
 #[function_component(Projects)]
 pub fn projects() -> Html {
-    let nav = use_navigator().unwrap();
-
-    let callback_nav = |target: Route| {
-        let nav = nav.clone();
-        Callback::from(move |_| nav.clone().push(&target))
-    };
     let project_item = |tag: &'static str, target: Route, text: &'static str| -> Html {
         html! {
             <div tag={tag} class={"project-item"}>
                 <p>
-                    <a href={"javascript:void(0);"} onclick={callback_nav(target)}>
+                    <Link<Route> to={target}>
                         {text}
-                    </a>
+                    </Link<Route>>
                 </p>
             </div>
         }

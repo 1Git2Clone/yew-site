@@ -111,22 +111,17 @@ fn set_section_items(items: Vec<&str>) -> Html {
 /// In this way it's possible to put all the Function Components in this module folder and
 /// re-export them to make the project more structured.
 pub fn wrap_blog_subsite(
-    nav: Navigator,
     clipboard: yew_hooks::UseClipboardHandle,
     blog_data: BlogData,
     blog_contents_items: Vec<&str>,
     content_html: Html,
 ) -> Html {
-    let callback_nav = |target: Route| {
-        let nav = nav.clone();
-        Callback::from(move |_| nav.clone().push(&target))
-    };
     wrap_site(html! {
         <>
             <br />
-            <a href={"javascript:void(0);"} onclick={callback_nav(Route::Blog)}>
+            <Link<Route> to={Route::Blog}>
                 {"Go back"}
-            </a>
+            </Link<Route>>
             {blog_showcase_wrap(
                 html! {
                     <>
