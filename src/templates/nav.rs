@@ -50,7 +50,9 @@ pub fn nav() -> Html {
     html! {
         <nav class={&set_nav}>
             <div key={"mobile_nav"} class={&set_nav_button} onclick={flip()}>
-                <a>{ "☰" }</a>
+                <div id={"hamburger-nav"}>
+                    { "☰" }
+                </div>
             </div>
             <div key={"nav_container"} class={&set_nav_container}>
                 <div key={"homepage"} class={&set_nav_item_class}>
