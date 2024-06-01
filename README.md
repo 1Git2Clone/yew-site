@@ -4,7 +4,7 @@
 
 <https://1k2s.netlify.app>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a7cccd56-43ac-49f4-abd7-38c56ba83f18/deploy-status)](https://app.netlify.com/sites/1k2s/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/09fe8d27-526e-4c93-a05e-918da6455e77/deploy-status)](https://app.netlify.com/sites/1k2s/deploys)
 
 ## Short Description & Instructions
 
