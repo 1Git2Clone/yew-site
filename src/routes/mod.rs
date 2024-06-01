@@ -23,6 +23,8 @@ pub enum Route {
     #[at("/projects/leetcode-trees-rs")]
     ProjectLeetCodeTrees,
 
+    #[at("/gallery")]
+    GalleryBase,
     #[at("/gallery/:page")]
     Gallery { page: u32 },
 
