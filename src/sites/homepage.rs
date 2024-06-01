@@ -2,8 +2,6 @@ use super::*;
 
 #[function_component(Homepage)]
 pub fn homepage() -> Html {
-    let nav_gallery = use_navigator().unwrap();
-    let callback_gallery = Callback::from(move |_| nav_gallery.push(&Route::Gallery));
     wrap_site(html! {
         <>
             <h1>{ "What's this site?" }</h1>
@@ -16,9 +14,9 @@ pub fn homepage() -> Html {
                 <br />
 
                 {"No one cares about that though... Make sure to check out the best part of this site! ("}
-                <a href={"javascript:void(0);"} onclick={callback_gallery}>
-                {"the Hu Tao gallery"}
-                </a>
+                <Link<Route> to={Route::Gallery}>
+                    {"the Hu Tao gallery"}
+                </Link<Route>>
                 {")"}
             </p>
         </>
