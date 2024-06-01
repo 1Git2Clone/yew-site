@@ -1,25 +1,24 @@
 use super::*;
 
 use crate::data::footer::*;
-use crate::enums::Socials::*;
 use crate::structs::ImageElement;
 
 #[function_component(Footer)]
 pub fn footer() -> Html {
-    let footer_img_container = || String::from("footer-img-container");
+    use crate::enums::Socials as s;
 
-    let twitter = SOCIALS_IMAGES.get(&Twitter).unwrap().clone();
-    let github = SOCIALS_IMAGES.get(&GitHub).unwrap().clone();
-    let gitlab = SOCIALS_IMAGES.get(&GitLab).unwrap().clone();
-    let codeberg = SOCIALS_IMAGES.get(&Codeberg).unwrap().clone();
-    let discord = SOCIALS_IMAGES.get(&Discord).unwrap().clone();
+    let twitter = get_socials_images(s::Twitter);
+    let github = get_socials_images(s::GitHub);
+    let gitlab = get_socials_images(s::GitLab);
+    let codeberg = get_socials_images(s::Codeberg);
+    let discord = get_socials_images(s::Discord);
 
-    let set_footer_img = |img_element: ImageElement, class: String, key: Option<String>| -> Html {
+    let set_footer_img = |key: Option<&str>, img_element: &ImageElement| -> Html {
         html! {
-            <div key={key.unwrap_or(img_element.img_src.clone())} class={class}>
-                <a href={img_element.clone().href()} target="_blank">
+            <div key={key.unwrap_or(&img_element.img_src.clone())} class={"footer-img-container"}>
+                <a href={img_element.href.clone()} target="_blank">
                     <img class="footer-img"
-                        src={img_element.img_src()}
+                        src={img_element.img_src.clone()}
                     />
                 </a>
             </div>
@@ -36,29 +35,24 @@ pub fn footer() -> Html {
             </h2>
             <div class="footer-images">
                 {set_footer_img(
-                        twitter.clone(),
-                        footer_img_container(),
-                        Some(twitter.img_src())
+                        Some(&twitter.img_src.clone()),
+                        &twitter,
                 )}
                 {set_footer_img(
-                        github.clone(),
-                        footer_img_container(),
-                        Some(github.img_src())
+                        Some(&github.img_src.clone()),
+                        &github,
                 )}
                 {set_footer_img(
-                        gitlab.clone(),
-                        footer_img_container(),
-                        Some(gitlab.img_src())
+                        Some(&gitlab.img_src.clone()),
+                        &gitlab,
                 )}
                 {set_footer_img(
-                        codeberg.clone(),
-                        footer_img_container(),
-                        Some(codeberg.img_src())
+                        Some(&codeberg.img_src.clone()),
+                        &codeberg,
                 )}
                 {set_footer_img(
-                        discord.clone(),
-                        footer_img_container(),
-                        Some(discord.img_src())
+                        Some(&discord.img_src.clone()),
+                        &discord,
                 )}
             </div>
             <p>

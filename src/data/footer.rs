@@ -1,52 +1,36 @@
-use lazy_static::lazy_static;
-use std::collections::HashMap;
-
 use crate::enums::Socials;
 use crate::structs::ImageElement;
 
-static DIRECTORY: &str = "/public/socials/";
-static EXTENSION: &str = ".svg";
+const DIRECTORY: &str = "/public/socials/";
+const EXTENSION: &str = ".svg";
 
-lazy_static! {
-    pub static ref SOCIALS_IMAGES: HashMap<Socials, ImageElement> = {
-        use Socials::*;
+fn set_src(img_name: &'static str) -> String {
+    format!("{DIRECTORY}{img_name}{EXTENSION}")
+}
 
-        HashMap::from([
-            (
-                Twitter,
-                ImageElement::from(
-                    format!("{DIRECTORY}{}{EXTENSION}", "twitter"),
-                    String::from("https://twitter.com/1Kill2Steal"),
-                ),
-            ),
-            (
-                GitHub,
-                ImageElement::from(
-                    format!("{DIRECTORY}{}{EXTENSION}", "github"),
-                    String::from("https://github.com/1Git2Clone"),
-                ),
-            ),
-            (
-                GitLab,
-                ImageElement::from(
-                    format!("{DIRECTORY}{}{EXTENSION}", "gitlab"),
-                    String::from("https://gitlab.com/1Kill2Steal"),
-                ),
-            ),
-            (
-                Codeberg,
-                ImageElement::from(
-                    format!("{DIRECTORY}{}{EXTENSION}", "codeberg"),
-                    String::from("https://codeberg.org/1Kill2Steal"),
-                ),
-            ),
-            (
-                Discord,
-                ImageElement::from(
-                    format!("{DIRECTORY}{}{EXTENSION}", "discord"),
-                    String::from("https://discord.gg/d8eyqpK2PN"),
-                ),
-            ),
-        ])
-    };
+pub fn get_socials_images(e: Socials) -> ImageElement {
+    use Socials as s;
+
+    match e {
+        s::Twitter => ImageElement::from(
+            set_src("twitter"),
+            String::from("https://twitter.com/1Kill2Steal"),
+        ),
+        s::GitHub => ImageElement::from(
+            set_src("github"),
+            String::from("https://github.com/1Git2Clone"),
+        ),
+        s::GitLab => ImageElement::from(
+            set_src("gitlab"),
+            String::from("https://gitlab.com/1Kill2Steal"),
+        ),
+        s::Codeberg => ImageElement::from(
+            set_src("codeberg"),
+            String::from("https://codeberg.org/1Kill2Steal"),
+        ),
+        s::Discord => ImageElement::from(
+            set_src("discord"),
+            String::from("https://discord.gg/d8eyqpK2PN"),
+        ),
+    }
 }
