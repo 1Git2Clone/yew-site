@@ -17,7 +17,9 @@ pub fn understanding_big_o_notation() -> Html {
     let introduction_html = html! {
         <>
             <h2 id={introduction}>
-                {introduction}
+                <a href={format!("#{}", introduction)}>
+                    {introduction}
+                </a>
             </h2>
 
             <p>
@@ -49,7 +51,9 @@ pub fn understanding_big_o_notation() -> Html {
     let dictionary_html = html! {
         <>
             <h2 id={dictionary}>
-                {dictionary}
+                <a href={format!("#{}", dictionary)}>
+                    {dictionary}
+                </a>
             </h2>
 
             <p>
@@ -125,7 +129,9 @@ pub fn understanding_big_o_notation() -> Html {
     let analysis_html = html! {
         <>
             <h2 id={analysis}>
-                {analysis}
+                <a href={format!("#{}", analysis)}>
+                    {analysis}
+                </a>
             </h2>
             <p>
                 {"It's very likely that you've seen this Big O notation graph: "}
@@ -314,7 +320,9 @@ pub fn understanding_big_o_notation() -> Html {
     let optimizing_for_memory_vs_space_html = html! {
         <>
             <h2 id={optimizing_for_memory_vs_space}>
-                {optimizing_for_memory_vs_space.replace('_', " ")}
+                <a href={format!("#{}", optimizing_for_memory_vs_space)}>
+                    {optimizing_for_memory_vs_space.replace('_', " ")}
+                </a>
             </h2>
             <p>
                 {"This depends on a lot of factors. Although this will be the example use case: "}
@@ -474,7 +482,9 @@ pub fn understanding_big_o_notation() -> Html {
     let the_misinformation_about_big_o_complexity_html = html! {
         <>
             <h2 id={the_misinformation_about_big_o_complexity}>
-                {the_misinformation_about_big_o_complexity.replace('_', " ")}
+                <a href={format!("#{}", the_misinformation_about_big_o_complexity)}>
+                    {the_misinformation_about_big_o_complexity.replace('_', " ")}
+                </a>
             </h2>
             <p>
                 {"Big O notation ISN'T the all-be-it in determining whether or not algorithm A
@@ -498,7 +508,9 @@ pub fn understanding_big_o_notation() -> Html {
     let not_only_big_o_html = html! {
         <>
             <h2 id={not_only_big_o}>
-                {not_only_big_o.replace('_', " ")}
+                <a href={format!("#{}", not_only_big_o)}>
+                    {not_only_big_o.replace('_', " ")}
+                </a>
             </h2>
 
             // Big O
@@ -669,7 +681,9 @@ pub fn understanding_big_o_notation() -> Html {
     let summary_html = html! {
         <>
             <h2 id={summary}>
-                {summary}
+                <a href={format!("#{}", summary)}>
+                    {summary}
+                </a>
             </h2>
             <p>
                 {"The big O notation is a mathematical way to define the worst case scenario
