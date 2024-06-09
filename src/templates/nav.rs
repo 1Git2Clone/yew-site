@@ -93,6 +93,12 @@ pub fn nav() -> Html {
                         <Link<Route> to={Route::ProjectLeetCodeTrees}>
                             { "LeetCode Trees" }
                         </Link<Route>>
+                        <Link<Route> to={Route::ProjectReactix}>
+                            { "Reactix" }
+                        </Link<Route>>
+                        <Link<Route> to={Route::ProjectCurrencyConversion}>
+                            { "Currency Conversion" }
+                        </Link<Route>>
                     </div>
                 </details>
                 <div key={"gallery"} class={&set_nav_item_class}>
