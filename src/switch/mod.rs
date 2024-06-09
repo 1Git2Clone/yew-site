@@ -43,6 +43,12 @@ pub fn switch(routes: Route) -> Html {
         Route::ProjectLeetCodeTrees => html! {
             <ProjectLeetCodeTrees />
         },
+        Route::ProjectReactix => html! {
+            <ProjectReactix />
+        },
+        Route::ProjectCurrencyConversion => html! {
+            <ProjectCurrencyConversion />
+        },
 
         Route::GalleryBase => html! {
             <Gallery page={1} />

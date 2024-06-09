@@ -26,3 +26,13 @@ pub fn counting_blinks() -> Html {
 pub fn leetcode_trees() -> Html {
     wrap_project_subsite(leetcode_trees_contents())
 }
+
+#[function_component(ProjectReactix)]
+pub fn reactix() -> Html {
+    wrap_project_subsite(reactix_content())
+}
+
+#[function_component(ProjectCurrencyConversion)]
+pub fn currency_conversion() -> Html {
+    wrap_project_subsite(currency_conversion_contents())
+}

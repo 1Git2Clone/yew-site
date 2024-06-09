@@ -22,6 +22,10 @@ pub enum Route {
     ProjectCountingBlinks,
     #[at("/projects/leetcode-trees-rs")]
     ProjectLeetCodeTrees,
+    #[at("/projects/reactix")]
+    ProjectReactix,
+    #[at("/projects/currency-conversion")]
+    ProjectCurrencyConversion,
 
     #[at("/gallery")]
     GalleryBase,

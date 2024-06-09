@@ -219,3 +219,59 @@ pub fn leetcode_trees_contents() -> Html {
         </>
     })
 }
+
+pub fn reactix_content() -> Html {
+    project_showcase_wrap(html! {
+        <>
+            <br />
+            <h2>{"Reactix"}</h2>
+            <br />
+            <a href="https://gitlab.com/1K2S/reactix" target="_blank">
+                {"GitLab repo"}
+            </a>
+            <br />
+            <br />
+            {"A monorepo which aims to present a modern website template utilizing React, Tailwind,
+            TS and Vite for the front-end and Actix on the back-end. It also tries to follow best
+            practices with stuff like having a valid SSL cerification and preventing "}
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">
+                {"CORS"}
+            </a>
+            {". Additionally it features comprehensive README tutorials that you can check for both the "}
+            <a href="https://gitlab.com/1k2s/reactix/tree/main/frontend" target="_blank">
+                {"front-end"}
+            </a>
+            {", "}
+            <a href="https://gitlab.com/1k2s/reactix/tree/main/backend" target="_blank">
+                {"back-end"}
+            </a>
+            {" and also on a "}
+            <a href="https://gitlab.com/1k2s/reactix/tree/main" target="_blank">
+                {"repository level"}
+            </a>
+            {"."}
+        </>
+    })
+}
+
+pub fn currency_conversion_contents() -> Html {
+    project_showcase_wrap(html! {
+        <>
+            <br />
+            <h2>{"Currency Conversion"}</h2>
+            <br />
+            <a href="https://gitlab.com/1Kill2Steal/currency-conversion" target="_blank">
+                {"GitLab repo"}
+            </a>
+            <br />
+            <br />
+            {"A Python program that converts user input value from one currency into another into a
+            JSON file. It uses the "}
+            <a href="https://www.fastforex.io/" target="_blank">
+                {"FastForex API"}
+            </a>
+            {" and it works on the basis of a date, value, input currency and output currencies
+            presented by their 3 letter abbreviations based on ISO 4217."}
+        </>
+    })
+}
