@@ -202,7 +202,7 @@ pub fn leetcode_trees_contents() -> Html {
                 {"103. Binary Tree Level Order Traversal"}
             </a>
             {") but it expands upon their general implementations with additional macros as well as
-            a proper"}<b>{"Result<T, E>"}</b>{" type which can be used in tests and/or your main
+            a proper "}<b>{"Result<T, E>"}</b>{" type which can be used in tests and/or your main
             function."}
             <br />
             <br />
