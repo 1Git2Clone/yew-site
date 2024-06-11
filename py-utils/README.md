@@ -1,8 +1,20 @@
 # Python Utilities
 
-This folder was meant to serve as a folder for all the Python utilities that are involved in this project.
+<!-- markdownlint-disable MD033 -->
+<p>
+  <img
+    height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Python-Dark.svg"
+    alt="Python"
+  />
+</p>
+<!-- markdownlint-enable MD033 -->
 
-Personal recommendation: Use [uv](https://github.com/astral-sh/uv) instead of vanilla pip.
+This folder was meant to serve as a folder for all the Python utilities that
+are involved in this project.
+
+Personal recommendation: Use [uv](https://github.com/astral-sh/uv) instead of
+vanilla pip.
 
 ## Set up instructions for pip
 

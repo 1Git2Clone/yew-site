@@ -6,6 +6,39 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/09fe8d27-526e-4c93-a05e-918da6455e77/deploy-status)](https://app.netlify.com/sites/1k2s/deploys)
 
+<!-- markdownlint-disable MD033 -->
+<p>
+  <img height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Rust.svg"
+    alt="Rust"
+  />
+  <img
+    height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Yew-Light.svg"
+    alt="Yew"
+  />
+  <img
+    height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Sass.svg"
+    alt="Syntactically Awesome Style Sheets (Sass)"
+  />
+  <img
+    height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Python-Dark.svg"
+    alt="Python"
+  />
+  <img height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Bash-Dark.svg"
+    alt="Shell"
+  />
+  <img
+    height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/HTML.svg"
+    alt="HTML"
+  />
+</p>
+<!-- markdownlint-enable MD033 -->
+
 ## Short Description & Instructions
 
 It uses `wasm-bindgen` with the Yew framework and the yew router to serve the
