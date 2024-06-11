@@ -19,6 +19,11 @@
   />
   <img
     height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Netlify-Dark.svg"
+    alt="Netlify"
+  />
+  <img
+    height="50px"
     src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Sass.svg"
     alt="Syntactically Awesome Style Sheets (Sass)"
   />
