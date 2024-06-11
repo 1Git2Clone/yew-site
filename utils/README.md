@@ -1,5 +1,14 @@
 # Additional Cargo Make Utilities
 
+<!-- markdownlint-disable MD033 -->
+<p>
+  <img height="50px"
+    src="https://codeberg.org/1Kill2Steal/skill-icons/raw/branch/main/icons/Rust.svg"
+    alt="Rust"
+  />
+</p>
+<!-- markdownlint-enable MD033 -->
+
 ## Setting up
 
 ### Prerequisites
