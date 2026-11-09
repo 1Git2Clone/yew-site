@@ -2,7 +2,11 @@
 
 ## Hosted on Netlify
 
-<https://1k2s.netlify.app>
+<https://hu-tao.dev>
+
+This Yew site is retired. Its Netlify project serves permanent redirects to the
+current site using `netlify.toml`. Keep the old project online and keep
+`hu-tao.dev` assigned to the current site's separate Netlify project.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/09fe8d27-526e-4c93-a05e-918da6455e77/deploy-status)](https://app.netlify.com/sites/1k2s/deploys)
 

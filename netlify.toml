@@ -5,8 +5,22 @@ environment = { NETLIFY_EXPERIMENTAL_BUILD_RUST_SOURCE = "true" }
   publish = "dist/"
   command = "chmod +x ./build.sh && ./build.sh"
 
-# SPA restrictions.
+# Preserve the article's destination when retiring the Yew site.
+[[redirects]]
+  from = "/blog/understanding-big-o-notation"
+  to = "https://hu-tao.dev/blogs/intro-to-big-o-notation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "https://hu-tao.dev/blogs"
+  status = 301
+  force = true
+
+# Keep the old Netlify project online to redirect visitors and search engines.
 [[redirects]]
   from = "/*"
-  to = "/"
-  status = 200
+  to = "https://hu-tao.dev/"
+  status = 301
+  force = true
